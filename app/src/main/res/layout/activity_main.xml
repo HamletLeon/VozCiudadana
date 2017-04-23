@@ -18,17 +18,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <ImageView
-                android:id="@+id/imageView"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:layout_margin="10dp"
-                android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax"
-                app:srcCompat="@mipmap/ic_launcher" />
+                android:background="@android:color/background_light">
+
+                <ImageView
+                    android:id="@+id/background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="30dp"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax"
+                    app:srcCompat="@drawable/logo_aplicacion" />
+
+            </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -40,13 +49,14 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_xmain" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
+        android:visibility="visible"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_dialog_alert" />
