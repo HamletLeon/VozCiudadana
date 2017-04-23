@@ -1,5 +1,6 @@
 package com.juventudrd.hsantana.vozciudadana;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private Toolbar mToolbar;
     private FloatingActionButton mFloatingButton;
     private RecyclerView mRecyclerView;
     private NewsAdapter mNewsAdapter;
@@ -29,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
         initCollapsingToolbar();
 
@@ -47,9 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private List<News> getSomeExampleData() {
         List<News> news = new ArrayList<>();
-        for (int i=0; i<6; i++) {
-            if (i<mExampleImages.length)news.add(new News("Texto de ejemplo como titulo de la noticia", getString(R.string.large_text), 5+i, 10+i, 20+i, mExampleImages[i]));
+        for (int i=0; i<mExampleImages.length; i++) {
+            news.add(new News("Texto de ejemplo como titulo de la noticia", getString(R.string.large_text), 5+i, 10+i, 20+i, mExampleImages[i]));
         }
+        news.add(new News("Voz Ciudadana mejorando la participacion ciudadana", getString(R.string.large_text), 100, 2, 50, R.drawable.logo_aplicacion));
         return news;
     }
 
@@ -70,7 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    if (collapsingToolbar!=null) collapsingToolbar.setTitle(getString(R.string.app_name));
+                    if (collapsingToolbar!=null) {
+                        collapsingToolbar.setTitle(getString(R.string.app_name));
+                    }
                     isShow = true;
                 } else if (isShow) {
                     if (collapsingToolbar!=null) collapsingToolbar.setTitle(" ");

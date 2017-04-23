@@ -18,14 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:background="@android:color/background_light">
+                android:background="@color/viewBg">
 
                 <ImageView
                     android:id="@+id/background"

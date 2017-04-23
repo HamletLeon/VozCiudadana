@@ -93,4 +93,10 @@
     <string name="votesQTY">%1$d a favor</string>
     <string name="againstQTY">%1$d en contra</string>
     <string name="commentsQTY">%1$d comentarios</string>
+    <string name="newsImage">Imagen de la noticia</string>
+    <string name="votesPeopleQuantity">Cantidad de personas a favor</string>
+    <string name="againstPeopleQuantity">Cantidad de personas en contra</string>
+    <string name="vote">A favor</string>
+    <string name="against">En contra</string>
+    <string name="comment">Comentar</string>
 </resources>

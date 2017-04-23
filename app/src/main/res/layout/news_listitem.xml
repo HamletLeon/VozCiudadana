@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -18,12 +19,14 @@
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="200dp"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:clickable="true"
             android:focusable="true"
-            android:padding="7dp" />
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/newsImage" />
 
         <TextView
             android:id="@+id/title"
@@ -32,7 +35,6 @@
             android:layout_below="@+id/image"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Mueren 150 personas en atraco a banco"
             android:textColor="?attr/actionMenuTextColor"
             android:textSize="24sp" />
 
@@ -45,8 +47,7 @@
             android:clickable="true"
             android:ellipsize="end"
             android:focusable="true"
-            android:maxLines="6"
-            android:text="@string/large_text" />
+            android:maxLines="6" />
 
         <LinearLayout
             android:id="@+id/QTY_layout"
@@ -61,7 +62,8 @@
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                app:srcCompat="@drawable/pro" />
+                app:srcCompat="@drawable/pro"
+                android:contentDescription="@string/votesPeopleQuantity" />
 
             <TextView
                 android:id="@+id/vote_QTY"
@@ -69,28 +71,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginStart="2dp"
-                android:text="5 a favor"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
 
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginStart="5dp"
                 app:srcCompat="@drawable/against"
-                android:layout_marginLeft="5dp" />
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/againstPeopleQuantity" />
 
             <TextView
                 android:id="@+id/against_QTY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
-                android:text="10 en contra"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:layout_marginLeft="2dp" />
 
             <TextView
                 android:id="@+id/comments_QTY"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
@@ -98,8 +99,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="end"
-                android:text="10 comentarios"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <View
@@ -116,23 +116,27 @@
             android:layout_below="@+id/QTY_separator"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:id="@+id/vote_action"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
+                android:minHeight="38dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:padding="3dp"
-                    app:srcCompat="@drawable/pro" />
+                    app:srcCompat="@drawable/pro"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,9 +145,9 @@
                     android:layout_marginLeft="3dp"
                     android:layout_marginRight="3dp"
                     android:layout_marginStart="3dp"
-                    android:text="A favor"
+                    android:text="@string/vote"
                     android:textColor="@color/cardview_dark_background"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -153,16 +157,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
+                android:minHeight="38dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:padding="3dp"
-                    app:srcCompat="@drawable/against" />
+                    app:srcCompat="@drawable/against"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -171,9 +178,9 @@
                     android:layout_marginLeft="3dp"
                     android:layout_marginRight="3dp"
                     android:layout_marginStart="3dp"
-                    android:text="En contra"
+                    android:text="@string/against"
                     android:textColor="@color/cardview_dark_background"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -182,16 +189,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
+                android:minHeight="38dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:padding="3dp"
-                    app:srcCompat="@drawable/comment" />
+                    app:srcCompat="@drawable/comment"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -200,9 +210,9 @@
                     android:layout_marginLeft="3dp"
                     android:layout_marginRight="3dp"
                     android:layout_marginStart="3dp"
-                    android:text="Comentar"
+                    android:text="@string/comment"
                     android:textColor="@color/cardview_dark_background"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
