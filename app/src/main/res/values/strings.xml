@@ -91,7 +91,9 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="votesQTY">%1$d a favor</string>
+    <string name="votesYouAndQTY">Tú y %1$d a favor</string>
     <string name="againstQTY">%1$d en contra</string>
+    <string name="againstYouAndQTY">Tú y %1$d en contra</string>
     <string name="commentsQTY">%1$d comentarios</string>
     <string name="newsImage">Imagen de la noticia</string>
     <string name="votesPeopleQuantity">Cantidad de personas a favor</string>
@@ -99,4 +101,16 @@
     <string name="vote">A favor</string>
     <string name="against">En contra</string>
     <string name="comment">Comentar</string>
+    <string name="inConstruction">En Construcción!</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="news">Noticias</string>
+    <string name="profile">Perfil</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="contact_us">Contáctenos</string>
+    <string name="favor$AgainstQTY">%1$d a favor\n%1$d en contra</string>
+    <string name="responsesQTY">%1$d respuestas</string>
+    <string name="response">Responder</string>
+    <string name="report">Reportar</string>
 </resources>
