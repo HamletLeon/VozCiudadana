@@ -39,6 +39,8 @@ public class News implements Parcelable{
         mAgainstQTY = in.readInt();
         mAgainstIt = in.readByte()!=0;
         mCommentsQTY = in.readInt();
+
+        mExampleImage = in.readInt();
     }
 
     public static final Creator<News> CREATOR = new Creator<News>() {
@@ -69,6 +71,8 @@ public class News implements Parcelable{
         dest.writeInt(mAgainstQTY);
         dest.writeByte((byte) (mAgainstIt?1:0));
         dest.writeInt(mCommentsQTY);
+
+        dest.writeInt(mExampleImage);
     }
 
     String getImageURL() {

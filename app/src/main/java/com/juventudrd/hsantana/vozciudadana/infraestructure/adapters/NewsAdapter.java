@@ -1,6 +1,7 @@
 package com.juventudrd.hsantana.vozciudadana.infraestructure.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.juventudrd.hsantana.vozciudadana.activities.feed.CommentsActivity;
 import com.juventudrd.hsantana.vozciudadana.infraestructure.viewHolders.NewsViewHolder;
 import com.juventudrd.hsantana.vozciudadana.R;
 import com.juventudrd.hsantana.vozciudadana.infraestructure.entities.News;
@@ -103,8 +105,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
                             holder.mAgainstQTY.setText(String.format(res.getString(R.string.againstQTY), item.getAgainstQTY()));
                         }
                         break;
-//                    case R.id.comment_action:
-//                        break;
+                    case R.id.comment_action:
+                        Intent intent = new Intent(mContext, CommentsActivity.class);
+                        intent.putExtra("NewsSelected", item);
+                        mContext.startActivity(intent);
+                    break;
                     default:
                         Toast.makeText(mContext, mContext.getString(R.string.inConstruction), Toast.LENGTH_SHORT).show();
                         break;

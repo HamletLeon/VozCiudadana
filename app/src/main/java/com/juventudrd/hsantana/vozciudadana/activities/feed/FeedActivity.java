@@ -26,7 +26,7 @@ import com.juventudrd.hsantana.vozciudadana.infraestructure.utils.AppBarStateCha
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends NavigationViewController implements View.OnClickListener {
+public class FeedActivity extends NavigationViewController implements View.OnClickListener {
     private Toolbar mToolbar;
     private FloatingActionButton mFloatingButton;
     private RecyclerView mRecyclerView;

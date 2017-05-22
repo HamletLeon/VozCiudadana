@@ -14,34 +14,29 @@ import com.juventudrd.hsantana.vozciudadana.R;
 
 public class CommentsViewHolder extends RecyclerView.ViewHolder {
     public CardView mCardview;
-    public ImageView mImage; // NetWorkImageView cuando implemente Volley
-    public TextView mTitle;
-    public TextView mDescription;
-    public TextView mVoteQTY;
-    public TextView mAgainstQTY;
-    public TextView mCommentQTY;
-    public View mVoteAction;
-    public TextView mVoteActionText;
-    public View mAgainstAction;
-    public TextView mAgainstActionText;
-    public View mCommentAction;
-    public TextView mCommentActionText;
+    public TextView mCommentInfo;
+    public View mVoteActionsLayout;
+    public TextView mInFavorAction;
+    public TextView mAgaisntAction;
+    public TextView mDate;
+    public TextView mText;
+    public View mActionsLayout;
+    public TextView mResponses;
+    public TextView mResponseAction;
+    public TextView mReportAction;
 
     public CommentsViewHolder(View itemView) {
         super(itemView);
         mCardview = (CardView) itemView.findViewById(R.id.cardView);
-        mImage = (ImageView) itemView.findViewById(R.id.image);
-        mTitle = (TextView) itemView.findViewById(R.id.title);
-        mDescription = (TextView) itemView.findViewById(R.id.description);
-        mVoteQTY = (TextView) itemView.findViewById(R.id.vote_QTY);
-        mAgainstQTY = (TextView) itemView.findViewById(R.id.against_QTY);
-        mCommentQTY = (TextView) itemView.findViewById(R.id.comments_QTY);
-
-        mVoteAction = itemView.findViewById(R.id.vote_action);
-        mVoteActionText = (TextView) itemView.findViewById(R.id.vote_action_text);
-        mAgainstAction = itemView.findViewById(R.id.against_action);
-        mAgainstActionText = (TextView) itemView.findViewById(R.id.against_action_text);
-        mCommentAction = itemView.findViewById(R.id.comment_action);
-        mCommentActionText = (TextView) itemView.findViewById(R.id.comment_action_text);
+        mCommentInfo = (TextView) itemView.findViewById(R.id.commentInfo);
+        mVoteActionsLayout = itemView.findViewById(R.id.voteActions);
+        mInFavorAction = (TextView) itemView.findViewById(R.id.inFavor);
+        mAgaisntAction = (TextView) itemView.findViewById(R.id.agaisnt);
+        mDate = (TextView) itemView.findViewById(R.id.date);
+        mText = (TextView) itemView.findViewById(R.id.text);
+        mActionsLayout = itemView.findViewById(R.id.actions);
+        mResponses = (TextView) itemView.findViewById(R.id.responses);
+        mResponseAction = (TextView) itemView.findViewById(R.id.respond);
+        mReportAction = (TextView) itemView.findViewById(R.id.report);
     }
 }

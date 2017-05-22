@@ -124,24 +124,6 @@ public class NavigationViewController extends AppCompatActivity implements Navig
 
         if (!item.isChecked()){
             switch (id){
-//                case R.id.crm:
-//                    intent = new Intent(getApplicationContext(), CRMActivity.class);
-//                    if (mIntent!=null) intent.putExtras(mIntent);
-//                    startActivity(intent);
-//                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
-//                    finish();
-//                    break;
-//                case R.id.servicerequest:
-//                    intent = new Intent(getApplicationContext(), ServiceRequestActivity.class);
-//                    if (mIntent!=null) intent.putExtras(mIntent);
-//                    startActivity(intent);
-//                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
-//                    finish();
-//                    break;
-//                case R.id.logout:
-//                    if (mSession !=null) mSession.logoutUser(true);
-//                    finish();
-//                    break;
                 default:
                     Toast.makeText(this, getString(R.string.inConstruction), Toast.LENGTH_LONG).show();
                     mDrawerLayout.closeDrawer(GravityCompat.START);

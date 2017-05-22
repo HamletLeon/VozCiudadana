@@ -2,6 +2,8 @@ package com.juventudrd.hsantana.vozciudadana.infraestructure.entities;
 
 import android.os.Parcel;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,8 +16,8 @@ public class Comments extends Responses{
 
     public int mExampleImage = 0;
 
-    public Comments(String text, String imageURL, int score, int responsesquantity){
-        super(text, imageURL, score);
+    public Comments(String text, String imageURL, int[] score, int responsesquantity, Date CreationDate){
+        super(text, imageURL, score, CreationDate);
         this.ResponsesQTY = responsesquantity;
     }
 

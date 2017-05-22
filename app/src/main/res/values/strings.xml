@@ -109,8 +109,17 @@
     <string name="profile">Perfil</string>
     <string name="logout">Cerrar Sesión</string>
     <string name="contact_us">Contáctenos</string>
-    <string name="favor$AgainstQTY">%1$d a favor\n%1$d en contra</string>
-    <string name="responsesQTY">%1$d respuestas</string>
+    <string name="favor$AgainstQTY">%1$d a favor\n%2$d en contra</string>
+    <string name="youInFavor$AgainstQTY">Tú y %1$d a favor\n%2$d en contra</string>
+    <string name="favor$YouAgainstQTY">%1$d a favor\nTú y %2$d en contra</string>
+    <plurals name="responseQTY">
+        <item quantity="one">1 respuesta</item>
+        <item quantity="other">%d respuestas</item>
+    </plurals>
+    <string name="noneResponse">Ninguna respuesta</string>
     <string name="response">Responder</string>
     <string name="report">Reportar</string>
+    <string name="publishDate">%1$tA, %1$te de %1$tB del %1$tY</string>
+    <string name="writeComment">Escriba un comentario</string>
+    <string name="send">Enviar</string>
 </resources>

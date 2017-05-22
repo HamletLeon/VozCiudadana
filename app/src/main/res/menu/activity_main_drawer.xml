@@ -11,18 +11,21 @@
     <item
         android:id="@+id/profile"
         android:checkable="true"
+        android:enabled="true"
         android:icon="@drawable/profile"
         android:title="@string/profile" />
 
     <item
         android:id="@+id/contact_us"
         android:checkable="true"
+        android:enabled="true"
         android:icon="@drawable/contact_us"
         android:title="@string/contact_us" />
 
     <item
         android:id="@+id/logout"
         android:checkable="true"
+        android:enabled="true"
         android:icon="@drawable/logout"
         android:title="@string/logout" />
 </menu>

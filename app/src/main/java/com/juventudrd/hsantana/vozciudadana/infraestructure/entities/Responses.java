@@ -3,6 +3,9 @@ package com.juventudrd.hsantana.vozciudadana.infraestructure.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by hsantana on 4/22/2017.
  */
@@ -10,20 +13,24 @@ import android.os.Parcelable;
 public class Responses implements Parcelable{
     private String ImageURL = "";
     private String Text = "";
-    private int Score = 0;
+    private int[] Score = new int[2];
+    private boolean[] ScoreAboutUser = new boolean[2];
+    private Date CreationDate = Calendar.getInstance().getTime();
 
     public int mExampleImage = 0;
 
-    Responses(String mText, String mImageURL, int mScore){
+    Responses(String mText, String mImageURL, int[] mScore, Date CreationDate){
         this.Text = mText;
         this.ImageURL = mImageURL;
         this.Score = mScore;
+        this.CreationDate = CreationDate;
     }
 
     Responses(Parcel in) {
         ImageURL = in.readString();
         Text = in.readString();
-        Score = in.readInt();
+        in.readIntArray(Score);
+        in.readBooleanArray(ScoreAboutUser);
     }
 
     public static final Creator<Responses> CREATOR = new Creator<Responses>() {
@@ -47,7 +54,8 @@ public class Responses implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(Text);
         dest.writeString(ImageURL);
-        dest.writeInt(Score);
+        dest.writeIntArray(Score);
+        dest.writeBooleanArray(ScoreAboutUser);
     }
 
     public String getText() {
@@ -64,10 +72,31 @@ public class Responses implements Parcelable{
         this.ImageURL = imageURL;
     }
 
-    public int getScore() {
-        return Score;
+    public int getInFavor() {
+        return Score[0];
     }
-    public void setScore(int score) {
-        Score = score;
+    public int getAgainst(){
+        return Score[1];
+    }
+
+    public boolean getInFavorAboutUser(){
+        return ScoreAboutUser[0];
+    }
+    public void setInFavorAboutUser(boolean infavor){
+        ScoreAboutUser[0] = infavor;
+    }
+
+    public boolean getAgainstAboutUser(){
+        return ScoreAboutUser[1];
+    }
+    public void setAgainstAboutUser(boolean against){
+        ScoreAboutUser[1] = against;
+    }
+
+    public Date getCreationDate() {
+        return CreationDate;
+    }
+    public void setCreationDate(Date creationDate) {
+        CreationDate = creationDate;
     }
 }
